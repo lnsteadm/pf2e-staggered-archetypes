@@ -30,3 +30,10 @@ class OddLevelArchetypeFeats {
         }
     }
 }
+
+Hooks.once('devModeReady', (DevMode) => {
+    DevMode.registerPackageDebugFlag(OddLevelArchetypeFeats.ID);
+});
+
+
+Hooks.on('renderCharacterSheetPF2e', OddLevelArchetypeFeats.changeFeatLevels);
