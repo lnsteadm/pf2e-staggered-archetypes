@@ -8,15 +8,17 @@ class OddLevelArchetypeFeats {
      * @param {Any} _2
      */
 
-    static oddLevels = new Array(1,3,5,7,9,11,13,15,17,19);
+    //static oddLevels = new Array(1,3,5,7,9,11,13,15,17,19);
 
     static changeFeatLevels(character, _0, _1, _2) {
         let archetype_feats = character.object.feats.get("archetype");
 
         if(archetype_feats) {
             OddLevelArchetypeFeats.log(true, "Changing archetype feat levels to odd numbered levels");
-            if (!archetype_feats.slots.includes(1)){
-                archetype_feats.slots.splice(0, archetype_feats.slots.length, ...this.oddLevels);
+            if (!archetype_feats.slots.array.includes(element.level === 1)){
+                archetype_feats.slots.array.forEach(element => {
+                  element.level = element.level - 1;  
+                })
             }
         } else {
             OddLevelArchetypeFeats.log(true, "Archetype feats are disabled");
