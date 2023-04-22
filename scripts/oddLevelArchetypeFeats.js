@@ -12,16 +12,19 @@ class OddLevelArchetypeFeats {
 
     static changeFeatLevels(character, _0, _1, _2) {
         let archetype_feats = character.object.feats.get("archetype");
+        let character_level = character.object.level;
 
         if(archetype_feats) {
-            OddLevelArchetypeFeats.log(true, "Changing archetype feat levels to odd numbered levels");
-            if (!archetype_feats.slots.array.includes(element.level === 1)){
-                archetype_feats.slots.array.forEach(element => {
-                  element.level = element.level - 1;  
-                })
-            }
+            OddLevelArchetypeFeats.log(true, "Archetype feats already exist");
         } else {
-            OddLevelArchetypeFeats.log(true, "Archetype feats are disabled");
+            let oddLevels = new Array(character_level).fill(0).map((_,idx) => idx + 1).filter((idx) => idx % 2 === 1);
+
+            character.object.createGroup({
+                id: "archetype",
+                label: "PF2E.FeatArchetypeHeader",
+                supported: ["class"],
+                slots: oddLevels
+            });
         }
     }
 
