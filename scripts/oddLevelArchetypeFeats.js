@@ -8,7 +8,7 @@ class OddLevelArchetypeFeats {
      * @param {Any} _2
      */
 
-    static oddLevels = new Array(actor.level).fill(0).map((_, idx) => idx + 1).filter((idx) => idx % 2 === 1);
+    static oddLevels = new Array(1,3,5,7,9,11,13,15,17,19);
 
     static changeFeatLevels(character, _0, _1, _2) {
         let archetype_feats = character.objects.feats.get("archetype");
