@@ -11,7 +11,7 @@ class OddLevelArchetypeFeats {
     static oddLevels = new Array(1,3,5,7,9,11,13,15,17,19);
 
     static changeFeatLevels(character, _0, _1, _2) {
-        let archetype_feats = character.objects.feats.get("archetype");
+        let archetype_feats = character.object.feats.get("archetype");
 
         if(archetype_feats) {
             OddLevelArchetypeFeats.log(true, "Changing archetype feat levels to odd numbered levels");
