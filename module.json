@@ -1,0 +1,37 @@
+{
+    "name": "pf2e-staggered-archetypes",
+    "title": "PF2e Staggered Archetypes",
+    "author": "lnsteadm",
+    "description": "Changes feat slots from the free archetype variant to be at odd numbered levels instead of even numbered levels.",
+    "id": "pf2e-staggered-archetypes",
+    "authors": [
+        {
+            "name": "lnsteadm",
+            "url": "https://github.com/lnsteadm"
+        }
+    ],
+    "minimumCoreVersion": "0.8.0",
+    "compatibleCoreVersion": "9",
+    "compatibility": {
+        "minimum": 9,
+        "verified": 10
+    },
+    "relationships": {
+        "systems": [
+            {
+                "id": "pf2e",
+                "type": "system",
+                "manifest": "https://github.com/foundryvtt/pf2e/releases/latest/download/system.json",
+                "compatibility": {
+                    "minimum": "4.10.4"
+                }
+            }
+        ]
+    },
+    "version": "0.0.1",
+    "scripts": [
+        "scripts/oddLevelArchetypeFeats.js"
+    ],
+    "manifest": "",
+    "download": ""
+}
