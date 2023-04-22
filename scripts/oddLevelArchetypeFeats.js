@@ -14,12 +14,19 @@ class OddLevelArchetypeFeats {
         let archetype_feats = character.objects.feats.get("archetype");
 
         if(archetype_feats) {
-            OddLevelArchetypeFeats.console.log(false, "Changing archetype feat levels to odd numbered levels");
+            OddLevelArchetypeFeats.log(true, "Changing archetype feat levels to odd numbered levels");
             if (!archetype_feats.slots.includes(1)){
                 archetype_feats.slots.splice(0, archetype_feats.slots.length, ...this.oddLevels);
             }
         } else {
-            OddLevelArchetypeFeats.log(false, "Archetype feats are disabled");
+            OddLevelArchetypeFeats.log(true, "Archetype feats are disabled");
+        }
+    }
+
+    static log(force, ...args) {
+        const shouldLog = force || game.modules.get('_dev-mode').api?.getPackageDebugValue(OddLevelArchetypeFeats.ID);
+        if(shouldLog) {
+            console.log(OddLevelArchetypeFeats.ID, '|', ...args);
         }
     }
 }
