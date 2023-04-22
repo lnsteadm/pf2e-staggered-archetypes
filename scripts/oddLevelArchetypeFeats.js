@@ -19,7 +19,7 @@ class OddLevelArchetypeFeats {
         } else {
             let oddLevels = new Array(character_level).fill(0).map((_,idx) => idx + 1).filter((idx) => idx % 2 === 1);
 
-            character.object.createGroup({
+            character.object.feats.createGroup({
                 id: "archetype",
                 label: "PF2E.FeatArchetypeHeader",
                 supported: ["class"],
