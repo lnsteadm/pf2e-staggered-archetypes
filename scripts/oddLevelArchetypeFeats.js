@@ -8,7 +8,7 @@ class OddLevelArchetypeFeats {
      * @param {Any} _2
      */
 
-    //static oddLevels = new Array(1,3,5,7,9,11,13,15,17,19);
+    static oddLevels = new Array(1,3,5,7,9,11,13,15,17,19);
 
     static changeFeatLevels(character, _0, _1, _2) {
         let archetype_feats = character.object.feats.get("archetype");
@@ -17,7 +17,7 @@ class OddLevelArchetypeFeats {
         if(archetype_feats) {
             OddLevelArchetypeFeats.log(true, "Archetype feats already exist");
         } else {
-            let oddLevels = new Array(character_level).fill(0).map((_,idx) => idx + 1).filter((idx) => idx % 2 === 1);
+            //let oddLevels = new Array(character_level).fill(0).map((_,idx) => idx + 1).filter((idx) => idx % 2 === 1);
 
             character.object.feats.createGroup({
                 id: "archetype",
